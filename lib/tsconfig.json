@@ -5,6 +5,6 @@
   },
   "files": [
     "index.d.ts",
-    "../typings/main.d.ts"
+    "../dev.d.ts"
   ]
 }
