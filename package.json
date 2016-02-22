@@ -1,0 +1,28 @@
+{
+  "name": "npm-chai",
+  "version": "0.0.1",
+  "description": "The type definition for https://github.com/chaijs/chai",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tslint": "^3.3.0",
+    "typescript": "^1.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unional/npm-chai.git"
+  },
+  "keywords": [
+    "typings",
+    "typed",
+    "chai"
+  ],
+  "author": "unional",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/unional/npm-chai/issues"
+  },
+  "homepage": "https://github.com/unional/npm-chai#readme"
+}
