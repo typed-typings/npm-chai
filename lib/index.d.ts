@@ -9,3 +9,5 @@
 import {Chai} from './Chai.d.ts';
 
 declare var chai: Chai;
+
+export = chai;
