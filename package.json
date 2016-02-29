@@ -6,7 +6,7 @@
     "test": "test"
   },
   "scripts": {
-    "bundle": "typings bundle lib/index.d.ts -o bundle.d.ts",
+    "bundle": "typings bundle index.d.ts -o bundle.d.ts",
     "test": "npm run bundle && ts-node test/test.ts"
   },
   "dependencies": {},

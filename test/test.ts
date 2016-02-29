@@ -7,3 +7,6 @@ c.use((chai, utils) => {
     new chai.Assertion(obj).to.be.equal(str);
   })
 });
+
+let someObject: Object;
+console.log(typeof someObject.should);

@@ -6,15 +6,8 @@
 //                 Olivier Chevet <https://github.com/olivr70>,
 //                 Matt Wistrand <https://github.com/mwistrand>
 
-import {Assertion} from './Assertion.d.ts';
-import {Chai} from './Chai.d.ts';
+import {Chai} from './lib/Chai.d.ts';
 
 declare var chai: Chai;
 
 export = chai;
-
-declare global {
-  interface Object {
-    should: Assertion;
-  }
-}
