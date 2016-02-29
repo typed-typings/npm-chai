@@ -1,3 +1,4 @@
+/// <reference path="../bundle.d.ts" />
 import c = require('chai');
 
 c.use((chai, utils) => {
@@ -6,4 +7,3 @@ c.use((chai, utils) => {
     new chai.Assertion(obj).to.be.equal(str);
   })
 });
-

@@ -5,10 +5,15 @@
   "directories": {
     "test": "test"
   },
+  "scripts": {
+    "bundle": "typings bundle lib/index.d.ts -o bundle.d.ts",
+    "test": "npm run bundle && ts-node test/test.ts"
+  },
   "dependencies": {},
   "devDependencies": {
+    "ts-node": "^0.5.5",
     "tslint": "^3.3.0",
-    "typescript": "^1.8.0"
+    "typescript": "^1.8.2"
   },
   "repository": {
     "type": "git",
