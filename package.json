@@ -7,10 +7,11 @@
   },
   "scripts": {
     "bundle": "typings bundle index.d.ts -o bundle.d.ts",
-    "test": "npm run bundle && ts-node test/test.ts"
+    "test": "npm run bundle && ts-node -n test/test.ts"
   },
   "dependencies": {},
   "devDependencies": {
+    "chai": "^3.5.0",
     "ts-node": "^0.5.5",
     "tslint": "^3.3.0",
     "typescript": "^1.8.2"

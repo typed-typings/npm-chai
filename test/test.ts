@@ -1,6 +1,8 @@
 /// <reference path="../bundle.d.ts" />
 import c = require('chai');
 
+c.should()
+
 c.use((chai, utils) => {
   utils.addChainableMethod(chai.Assertion.prototype, 'foo', function (str) {
     let obj = utils.flag(this, 'object');
@@ -8,5 +10,5 @@ c.use((chai, utils) => {
   })
 });
 
-let someObject: Object;
-console.log(typeof someObject.should);
+let someObject = {};
+console.log(someObject.should.be.an('object'));
