@@ -63,7 +63,7 @@ export interface Assertion extends LanguageChains, NumericComparison, TypeCompar
   oneOf(list: any[], message?: string): Assertion;
 }
 
-interface LanguageChains {
+export interface LanguageChains {
   to: Assertion;
   be: Assertion;
   been: Assertion;
@@ -79,7 +79,7 @@ interface LanguageChains {
   same: Assertion;
 }
 
-interface NumericComparison {
+export interface NumericComparison {
   above: NumberComparer;
   gt: NumberComparer;
   greaterThan: NumberComparer;
@@ -93,57 +93,57 @@ interface NumericComparison {
   within(start: number, finish: number, message?: string): Assertion;
 }
 
-interface NumberComparer {
+export interface NumberComparer {
   (value: number, message?: string): Assertion;
 }
 
-interface TypeComparison {
+export interface TypeComparison {
   (type: string, message?: string): Assertion;
   instanceof: InstanceOf;
   instanceOf: InstanceOf;
 }
 
-interface InstanceOf {
+export interface InstanceOf {
   (constructor: Object, message?: string): Assertion;
 }
 
-interface CloseTo {
+export interface CloseTo {
   (expected: number, delta: number, message?: string): Assertion;
 }
 
-interface Deep {
+export interface Deep {
   equal: Equal;
   include: Include;
   property: Property;
   members: Members;
 }
 
-interface KeyFilter {
+export interface KeyFilter {
   keys: Keys;
 }
 
-interface Equal {
+export interface Equal {
   (value: any, message?: string): Assertion;
 }
 
-interface Property {
+export interface Property {
   (name: string, value?: any, message?: string): Assertion;
 }
 
-interface OwnProperty {
+export interface OwnProperty {
   (name: string, message?: string): Assertion;
 }
 
-interface OwnPropertyDescriptor {
+export interface OwnPropertyDescriptor {
   (name: string, descriptor: PropertyDescriptor, message?: string): Assertion;
   (name: string, message?: string): Assertion;
 }
 
-interface Length extends LanguageChains, NumericComparison {
+export interface Length extends LanguageChains, NumericComparison {
   (length: number, message?: string): Assertion;
 }
 
-interface Include {
+export interface Include {
   (value: Object, message?: string): Assertion;
   (value: string, message?: string): Assertion;
   (value: number, message?: string): Assertion;
@@ -153,17 +153,17 @@ interface Include {
   all: KeyFilter;
 }
 
-interface Match {
+export interface Match {
   (regexp: RegExp | string, message?: string): Assertion;
 }
 
-interface Keys {
+export interface Keys {
   (...keys: string[]): Assertion;
   (keys: any[]): Assertion;
   (keys: Object): Assertion;
 }
 
-interface Throw {
+export interface Throw {
   (): Assertion;
   (expected: string, message?: string): Assertion;
   (expected: RegExp, message?: string): Assertion;
@@ -173,18 +173,18 @@ interface Throw {
   (constructor: Function, expected?: RegExp, message?: string): Assertion;
 }
 
-interface RespondTo {
+export interface RespondTo {
   (method: string, message?: string): Assertion;
 }
 
-interface Satisfy {
+export interface Satisfy {
   (matcher: Function, message?: string): Assertion;
 }
 
-interface Members {
+export interface Members {
   (set: any[], message?: string): Assertion;
 }
 
-interface PropertyChange {
+export interface PropertyChange {
   (object: Object, prop: string, msg?: string): Assertion;
 }
