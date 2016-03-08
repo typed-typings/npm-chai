@@ -1,11 +1,11 @@
-import {Assertion} from './Assertion.d.ts';
+import {Assertion} from './Assertion';
 import {AssertionError} from 'assertion-error';
-import {AssertStatic} from './Assert.d.ts';
-import {AssertionStatic} from './Assertion.d.ts';
-import {ExpectStatic} from './Expect.d.ts';
-import {Should} from './Should.d.ts';
-import {Config} from './Config.d.ts';
-import {utils} from './utils.d.ts';
+import {AssertStatic} from './Assert';
+import {AssertionStatic} from './Assertion';
+import {ExpectStatic} from './Expect';
+import {Should} from './Should';
+import {Config} from './Config';
+import {utils} from './utils';
 
 export interface Chai {
   AssertionError: typeof AssertionError;
