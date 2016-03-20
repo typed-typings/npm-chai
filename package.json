@@ -11,6 +11,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "blue-tape": "^0.2.0",
     "chai": "^3.5.0",
     "ts-node": "^0.5.5",
     "tslint": "^3.3.0",
