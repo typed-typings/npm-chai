@@ -8,8 +8,9 @@ import * as Config from './Config';
 import * as Utils from './Utils';
 
 declare namespace chai {
-  export interface AssertionError extends AE.AssertionError {}
-  export var Assertion: Assertion.AssertionStatic;
+  export interface AssertionStatic extends Assertion.AssertionStatic {}
+  export var AssertionError: AE.AssertionError;
+  export var Assertion: Assertion.Assertion;
   export var expect: Expect.ExpectStatic;
   export var assert: Assert.AssertStatic;
   export var config: Config.Config;
@@ -25,6 +26,6 @@ export default chai;
 
 declare global {
   interface Object {
-    should: Assertion;
+    should: Assertion.Assertion;
   }
 }

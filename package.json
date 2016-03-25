@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "typings bundle -o out",
-    "test": "ts-node -n test/test.ts",
+    "test": "cd test && ts-node test.ts && cd ..",
     "source-test": "echo source-test",
     "test-all": "npm test && npm run source-test",
     "watch": "onchange '**/*.d.ts' -i -e 'out/**' -- npm run build",
