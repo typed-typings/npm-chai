@@ -6,8 +6,6 @@
 //                 Olivier Chevet <https://github.com/olivr70>,
 //                 Matt Wistrand <https://github.com/mwistrand>
 
-import {Chai} from './lib/Chai';
-
-declare var chai: Chai;
+import chai from './lib/Chai';
 
 export = chai;

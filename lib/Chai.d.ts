@@ -1,26 +1,27 @@
-import {AssertionError} from 'assertion-error';
+import * as AE from 'assertion-error';
 
-import {AssertStatic} from './Assert';
-import {AssertionStatic, Assertion} from './Assertion';
-import {ExpectStatic} from './Expect';
-import {Should} from './Should';
-import {Config} from './Config';
-import {Utils} from './Utils';
+import * as Assert from './Assert';
+import * as Assertion from './Assertion';
+import * as Expect from './Expect';
+import * as Should from './Should';
+import * as Config from './Config';
+import * as Utils from './Utils';
 
-export interface Chai {
-  AssertionError: typeof AssertionError;
-  Assertion: AssertionStatic;
-  expect: ExpectStatic;
-  assert: AssertStatic;
-  config: Config;
-  util: Utils;
-  should(): Should;
-
+declare namespace chai {
+  export interface AssertionError extends AE.AssertionError {}
+  export var Assertion: Assertion.AssertionStatic;
+  export var expect: Expect.ExpectStatic;
+  export var assert: Assert.AssertStatic;
+  export var config: Config.Config;
+  export var util: Utils.Utils;
+  export function should(): Should.Should;
   /**
    * Provides a way to extend the internals of Chai
    */
-  use(fn: (chai: any, utils: Utils) => void): Chai;
+  export function use(fn: (chai: any, utils: Utils.Utils) => void): typeof chai;
 }
+
+export default chai;
 
 declare global {
   interface Object {

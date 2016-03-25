@@ -1,35 +1,25 @@
 {
-  "name": "npm-chai",
-  "version": "0.0.1",
-  "description": "The type definition for https://github.com/chaijs/chai",
-  "directories": {
-    "test": "test"
-  },
+  "private": true,
   "scripts": {
-    "build": "typings bundle -o test",
-    "test": "ts-node -n test/test.ts"
+    "build": "typings bundle -o out",
+    "test": "ts-node -n test/test.ts",
+    "source-test": "echo source-test",
+    "test-all": "npm test && npm run source-test",
+    "watch": "onchange '**/*.d.ts' -i -e 'out/**' -- npm run build",
+    "tdd": "onchange '**/*.ts' -i -e 'out/**' -- npm run build+test",
+    "tdd-all": "onchange '**/*.ts' -i -e 'out/**' -- npm run build+test-all",
+    "prepublish": "typings install",
+    "build+test": "npm run build && npm test",
+    "build+test-all": "npm run build && npm run test-all"
   },
-  "dependencies": {},
   "devDependencies": {
     "blue-tape": "^0.2.0",
-    "chai": "^3.5.0",
-    "ts-node": "^0.5.5",
-    "tslint": "^3.3.0",
-    "typescript": "^1.8.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/unional/npm-chai.git"
-  },
-  "keywords": [
-    "typings",
-    "typed",
-    "chai"
-  ],
-  "author": "unional",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/unional/npm-chai/issues"
-  },
-  "homepage": "https://github.com/unional/npm-chai#readme"
+    "is-callable": "1.1.3",
+    "onchange": "^2.1.2",
+    "ts-node": "^0.7.0",
+    "tslint": "git+https://github.com/unional/tslint.git",
+    "tslint-config-typings": "^0.1.2",
+    "typescript": "^1.8.9",
+    "typings": "^0.7.9"
+  }
 }
