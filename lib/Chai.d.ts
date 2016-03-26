@@ -22,7 +22,7 @@ declare namespace chai {
   export function use(fn: (chai: any, utils: Utils.Utils) => void): typeof chai;
 }
 
-export default chai;
+export = chai;
 
 declare global {
   interface Object {

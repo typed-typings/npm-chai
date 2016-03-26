@@ -6,6 +6,6 @@
 //                 Olivier Chevet <https://github.com/olivr70>,
 //                 Matt Wistrand <https://github.com/mwistrand>
 
-import chai from './lib/Chai';
+import chai = require('./lib/Chai');
 
 export = chai;
