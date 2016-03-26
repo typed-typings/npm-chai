@@ -2,15 +2,13 @@
   "private": true,
   "scripts": {
     "build": "typings bundle -o out",
-    "test": "cd test && ts-node test.ts && cd ..",
-    "source-test": "echo source-test",
-    "test-all": "npm test && npm run source-test",
-    "watch": "onchange '**/*.d.ts' -i -e 'out/**' -- npm run build",
-    "tdd": "onchange '**/*.ts' -i -e 'out/**' -- npm run build+test",
-    "tdd-all": "onchange '**/*.ts' -i -e 'out/**' -- npm run build+test-all",
-    "prepublish": "typings install",
-    "build+test": "npm run build && npm test",
-    "build+test-all": "npm run build && npm run test-all"
+    "lint": "tslint \"**/*.ts\" -e \"source/**\" -e \"out/**\"",
+    "test": "cd test && ts-node test.ts && echo run source tests",
+    "watch": "onchange \"**/*.ts\" -i -e \"out/**\" -- npm -s run build+test",
+    "publish": "npm -s run lint+build+test && echo publish to typings/registry",
+    "build+test": "npm run build && npm run test",
+    "lint+build+test": "npm run lint && npm run build && npm run test",
+    "prepublish": "typings install"
   },
   "devDependencies": {
     "blue-tape": "^0.2.0",
