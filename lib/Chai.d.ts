@@ -16,6 +16,7 @@ declare namespace chai {
   export var config: Config.Config;
   export var util: Utils.Utils;
   export function should(): Should.Should;
+  export function Should(): Should.Should;
   /**
    * Provides a way to extend the internals of Chai
    */

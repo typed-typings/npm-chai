@@ -148,6 +148,7 @@ export interface Include {
   (value: Object, message?: string): Assertion;
   (value: string, message?: string): Assertion;
   (value: number, message?: string): Assertion;
+  string(value: string, message?: string): Assertion;
   keys: Keys;
   members: Members;
   any: KeyFilter;
