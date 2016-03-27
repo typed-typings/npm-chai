@@ -113,6 +113,7 @@ export interface CloseTo {
 
 export interface Deep {
   equal: Equal;
+  equals: Equal;
   include: Include;
   property: Property;
   members: Members;
@@ -158,7 +159,7 @@ export interface Match {
 }
 
 export interface Keys {
-  (...keys: string[]): Assertion;
+  (...keys: any[]): Assertion;
   (keys: any[]): Assertion;
   (keys: Object): Assertion;
 }
