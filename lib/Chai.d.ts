@@ -9,7 +9,7 @@ import * as Utils from './Utils';
 
 declare namespace chai {
   export interface AssertionStatic extends Assertion.AssertionStatic {}
-  export var AssertionError: AE.AssertionError;
+  export class AssertionError extends AE.AssertionError {}
   export var Assertion: Assertion.Assertion;
   export var expect: Expect.ExpectStatic;
   export var assert: Assert.AssertStatic;

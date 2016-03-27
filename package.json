@@ -1,23 +1,26 @@
 {
   "private": true,
   "scripts": {
-    "build": "typings bundle -o out",
-    "lint": "tslint \"**/*.ts\" -e \"source/**\" -e \"out/**\"",
-    "test": "cd test && ts-node test.ts | tap-spec && echo run source tests",
+    "build": "echo building... && typings bundle -o out",
+    "lint": "echo linting... &^ tslint \"**/*.ts\" -e \"node_modules/**\" \"source/**\" -e \"out/**\" -e \"typings/**\"",
+    "test": "echo testing...&& cd test && ts-node ../node_modules/blue-tape/bin/blue-tape \"**/*.ts\" | tap-spec",
+    "source-test": "echo source-testing... && cd source-test && mocha --require ts-node/register \"**/*.ts\"",
+    "test-all": "npm run source-test && npm test",
     "watch": "onchange \"**/*.ts\" -i -e \"out/**\" -- npm -s run build+test",
     "publish": "npm -s run lint+build+test && echo publish to typings/registry",
-    "build+test": "npm run build && npm run test",
-    "lint+build+test": "npm run lint && npm run build && npm run test",
+    "build+test": "npm run build && npm run test-all",
+    "lint+build+test": "npm run lint && npm run build && npm run test-all",
     "prepublish": "typings install"
   },
   "devDependencies": {
     "blue-tape": "^0.2.0",
-    "is-callable": "1.1.3",
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
     "onchange": "^2.1.2",
     "tap-spec": "^4.1.1",
     "ts-node": "^0.7.0",
     "tslint": "git+https://github.com/unional/tslint.git",
-    "tslint-config-typings": "^0.1.2",
+    "tslint-config-typings": "^0.1.3",
     "typescript": "^1.8.9",
     "typings": "^0.7.9"
   }

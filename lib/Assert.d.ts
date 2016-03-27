@@ -7,6 +7,7 @@ export interface Assert {
      * @param message Message to display on error.
      */
     (expression: any, message?: string): void;
+    (expression: any, messageCallback: () => string): void;
 
     fail(actual?: any, expected?: any, msg?: string, operator?: string): void;
 
@@ -71,6 +72,7 @@ export interface Assert {
 
     include(exp: string, inc: any, msg?: string): void;
     include(exp: any[], inc: any, msg?: string): void;
+    include(exp: Object, inc: Object, msg?: string): void;
 
     notInclude(exp: string, inc: any, msg?: string): void;
     notInclude(exp: any[], inc: any, msg?: string): void;
@@ -118,6 +120,7 @@ export interface Assert {
     sameMembers(set1: any[], set2: any[], msg?: string): void;
     sameDeepMembers(set1: any[], set2: any[], msg?: string): void;
     includeMembers(superset: any[], subset: any[], msg?: string): void;
+    includeDeepMembers(superset: any[], subset: any[], msg?: string): void;
 
     ifError(val: any, msg?: string): void;
 
@@ -137,4 +140,12 @@ export interface Assert {
     notFrozen(obj: Object, msg?: string): void;
 
     oneOf(inList: any, list: any[], msg?: string): void;
+
+    changes(fn: Function, obj: {}, property: string): void;
+    doesNotChange(fn: Function, obj: {}, property: string): void;
+    increases(fn: Function, obj: {}, property: string): void;
+    doesNotIncrease(fn: Function, obj: {}, property: string): void;
+
+    decreases(fn: Function, obj: {}, property: string): void;
+    doesNotDecrease(fn: Function, obj: {}, property: string): void;
   }
