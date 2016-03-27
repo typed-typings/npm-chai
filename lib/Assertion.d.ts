@@ -1,5 +1,5 @@
 export interface AssertionStatic {
-  (target: any, message?: string): Assertion;
+  (target?: any, message?: string, stack?: Function): Assertion;
 }
 
 export interface Assertion extends LanguageChains, NumericComparison, TypeComparison {
