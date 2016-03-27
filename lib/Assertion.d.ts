@@ -37,9 +37,9 @@ export interface Assertion extends LanguageChains, NumericComparison, TypeCompar
   lengthOf: Length;
   match: Match;
   matches: Match;
-  string(string: string, message?: string): Assertion;
+  string(str: string, message?: string): Assertion;
   keys: Keys;
-  key(string: string): Assertion;
+  key(str: string): Assertion;
   throw: Throw;
   throws: Throw;
   Throw: Throw;
