@@ -1,3 +1,5 @@
+import {Assertion} from './Assertion';
+
 export interface Utils {
   addChainableMethod(ctx: any, name: string, chainingBehavior: (value: any) => void);
   addMethod(ctx: any, name: string, method: (value: any) => void);
@@ -6,10 +8,13 @@ export interface Utils {
   flag(obj: Object, key: string, value?: any);
   getActual(obj: Object, actual?: any);
   getEnumerableProperties(obj: Object);
+  getMessage(obj: Object, params: any[]);
   getMessage(obj: Object, message: string, negateMessage: string);
   getName(func: Function);
   getPathInfo(path: string, obj: Object);
   getPathValue(path: string, obj: Object);
   getProperties(obj: Object);
   hasProperty(obj: Object, name: string);
+  transferFlags(assertion: Assertion | any, obj: Object, includeAll?: boolean);
+  inspect(obj: any);
 }

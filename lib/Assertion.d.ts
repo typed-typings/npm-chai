@@ -1,5 +1,5 @@
 export interface AssertionStatic {
-  (target: any, message?: string): Assertion;
+  (target?: any, message?: string, stack?: Function): Assertion;
 }
 
 export interface Assertion extends LanguageChains, NumericComparison, TypeComparison {
@@ -37,9 +37,9 @@ export interface Assertion extends LanguageChains, NumericComparison, TypeCompar
   lengthOf: Length;
   match: Match;
   matches: Match;
-  string(string: string, message?: string): Assertion;
+  string(str: string, message?: string): Assertion;
   keys: Keys;
-  key(string: string): Assertion;
+  key(str: string): Assertion;
   throw: Throw;
   throws: Throw;
   Throw: Throw;
@@ -113,6 +113,7 @@ export interface CloseTo {
 
 export interface Deep {
   equal: Equal;
+  equals: Equal;
   include: Include;
   property: Property;
   members: Members;
@@ -147,6 +148,7 @@ export interface Include {
   (value: Object, message?: string): Assertion;
   (value: string, message?: string): Assertion;
   (value: number, message?: string): Assertion;
+  string(value: string, message?: string): Assertion;
   keys: Keys;
   members: Members;
   any: KeyFilter;
@@ -158,7 +160,7 @@ export interface Match {
 }
 
 export interface Keys {
-  (...keys: string[]): Assertion;
+  (...keys: any[]): Assertion;
   (keys: any[]): Assertion;
   (keys: Object): Assertion;
 }
