@@ -25,6 +25,7 @@ declare namespace chai {
 
 export = chai;
 
+/* tslint:disable:no-internal-module */
 declare global {
   interface Object {
     should: A.Assertion;

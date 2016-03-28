@@ -92,7 +92,7 @@ export interface Assert {
     deepPropertyNotVal(obj: Object, prop: string, val: any, msg?: string): void;
 
     lengthOf(exp: any, len: number, msg?: string): void;
-    //alias frenzy
+
     throw(fn: Function, msg?: string): void;
     throw(fn: Function, regExp: RegExp): void;
     throw(fn: Function, errType: Function, msg?: string): void;
