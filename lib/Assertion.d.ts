@@ -1,5 +1,6 @@
 export interface AssertionStatic {
   (target?: any, message?: string, stack?: Function): Assertion;
+  new (target?: any, message?: string, stack?: Function): Assertion;
 }
 
 export interface Assertion extends LanguageChains, NumericComparison, TypeComparison {
@@ -114,6 +115,7 @@ export interface CloseTo {
 export interface Deep {
   equal: Equal;
   equals: Equal;
+  eq: Equal;
   include: Include;
   property: Property;
   members: Members;
