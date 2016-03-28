@@ -4,7 +4,6 @@ The type definition for [`chai`](https://github.com/chaijs/chai).
 ## LICENSE
 MIT
 
-
 ## Contribute
 ```sh
 # Fork this repo
