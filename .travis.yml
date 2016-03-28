@@ -9,4 +9,4 @@ node_js:
   - "stable"
 
 script:
-  - npm lint+build+test
+  - npm run lint+build+test
