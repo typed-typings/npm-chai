@@ -1,4 +1,6 @@
 # Typed Chai
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/types/npm-chai.svg)](https://greenkeeper.io/)
 The type definition for [`chai`](https://github.com/chaijs/chai).
 
 ## LICENSE
