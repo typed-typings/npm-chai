@@ -10,11 +10,11 @@ import * as Utils from './Utils';
 declare namespace chai {
   export interface AssertionStatic extends A.AssertionStatic {}
   export class AssertionError extends AE.AssertionError {}
-  export var Assertion: A.AssertionStatic;
-  export var expect: Expect.ExpectStatic;
-  export var assert: Assert.AssertStatic;
-  export var config: Config.Config;
-  export var util: Utils.Utils;
+  export const Assertion: A.AssertionStatic;
+  export const expect: Expect.ExpectStatic;
+  export const assert: Assert.AssertStatic;
+  export const config: Config.Config;
+  export const util: Utils.Utils;
   export function should(): Should.Should;
   export function Should(): Should.Should;
   /**
